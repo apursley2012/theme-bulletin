@@ -1,0 +1,1775 @@
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cabin+Sketch:wght@400;700&family=Caveat+Brush&family=Cherry+Bomb+One&family=Englebert&family=Fascinate+Inline&family=Gorditas:wght@400;700&family=Kalnia+Glaze:wght@100..700&family=Londrina+Shadow&family=Marhey:wght@300..700&family=Marko+One&family=Original+Surfer&family=Overlock+SC&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Rampart+One&family=Rancho&family=Ribeye+Marrow&family=Rubik+Doodle+Shadow&family=Rum+Raisin&family=Spicy+Rice&family=Train+One&family=Yatra+One&family=Yusei+Magic&display=swap');
+
+:root {
+  --bg: #05050d;
+  --a: #00e5ff;
+  --b: #ff4db8;
+  --fg: #f6f2ff;
+}
+
+/* Font Imports */
+.spicy-rice-regular {
+  font-family: "Spicy Rice", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.yatra-one-regular {
+  font-family: "Yatra One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rancho-regular {
+  font-family: "Rancho", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.marko-one-regular {
+  font-family: "Marko One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.marhey-regular {
+  font-family: "Marhey Regular", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.marhey-bold {
+  font-family: "Marhey Bold", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.yusei-magic-regular {
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.overlock-sc-regular {
+  font-family: "Overlock SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.overlock-regular {
+  font-family: "Overlock", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.overlock-bold {
+  font-family: "Overlock", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.overlock-black {
+  font-family: "Overlock", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.overlock-regular-italic {
+  font-family: "Overlock", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.overlock-bold-italic {
+  font-family: "Overlock", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.overlock-black-italic {
+  font-family: "Overlock", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.londrina-shadow-regular {
+  font-family: "Londrina Shadow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.original-surfer-regular {
+  font-family: "Original Surfer", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.original-surfer-bold {
+  font-family: "Original Surfer", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cabin-sketch-regular {
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-sketch-bold {
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.rampart-one-regular {
+  font-family: "Rampart One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ribeye-marrow-regular {
+  font-family: "Ribeye Marrow", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cherry-bomb-one-regular {
+  font-family: "Cherry Bomb One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rum-raisin-regular {
+  font-family: "Rum Raisin", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rum-raisin-bold {
+  font-family: "Rum Raisin", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.caveat-brush-regular {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fascinate-inline-regular {
+  font-family: "Fascinate Inline", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rubik-doodle-shadow-regular {
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.englebert-regular {
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gorditas-regular {
+  font-family: "Gorditas", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gorditas-bold {
+  font-family: "Gorditas", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: "Rancho", cursive;
+  font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 4rem max(1rem, 7vw) 1rem;
+}
+
+.eyebrow {
+  color: var(--a);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.hero h1,
+.about-page h1 {
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-weight: 700;
+  font-style: normal;;
+  font-size:3.25rem;
+  margin: 0.2rem 0;
+}
+
+.hero p:last-child,
+.about-page p {
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  max-width: 850px;
+}
+
+.about-page {
+  padding: 4rem max(1rem, 7vw);
+}
+
+.category-navigation {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 1rem auto 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+}
+
+.category-navigation button,
+.board-pagination button {
+  padding: .65rem .9rem;
+  border: 2px solid var(--a);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fg);
+  font-family: "Original Surfer", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.category-navigation button[aria-pressed="true"] {
+  background: var(--a);
+  color: var(--bg);
+}
+
+.pinboard-viewport {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.pinboard {
+  position: relative;
+  width: 1240px;
+  height: 1780px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #e3ad76;
+  background-image: url("../images/cork-texture-tile.png");
+  background-repeat: repeat;
+  border: 24px solid #b3763b;
+  border-right-color: #9e642e;
+  border-bottom-color: #824f21;
+  border-left-color: #cca474;
+  border-radius: 4px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, .75);
+  transform-origin: top center;
+}
+
+.pinboard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 12px 12px 20px rgba(0, 0, 0, .8), inset -6px -6px 15px rgba(0, 0, 0, .45);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pinboard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid #4a2d14;
+  opacity: .35;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.note {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  padding: 1.45rem .95rem .95rem;
+  overflow: hidden;
+  background: var(--paper, #e7ff6d);
+  color: #120b1e;
+  box-shadow: 0 12px 26px #0008;
+  transform: rotate(var(--r));
+  border-radius: 2px 2px 10px 3px;
+  z-index: 3;
+  text-transform: uppercase;
+}
+
+.note::before {
+  content: '';
+  position: absolute;
+  top: .38rem;
+  left: 50%;
+  translate: -50% 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff8 0 18%, transparent 19%), radial-gradient(circle, #ff4db8 0 60%, #9d0a71 61%);
+  box-shadow: 0 3px 5px #0008;
+}
+
+.note:nth-child(5n + 1),
+.theme-pin-pair:nth-child(5n + 1) .note {
+  --paper: #e7ff6d;
+}
+
+.note:nth-child(5n + 2),
+.theme-pin-pair:nth-child(5n + 2) .note {
+  --paper: #9dff8b;
+}
+
+.note:nth-child(5n + 3),
+.theme-pin-pair:nth-child(5n + 3) .note {
+  --paper: #7ce7ff;
+}
+
+.note:nth-child(5n + 4),
+.theme-pin-pair:nth-child(5n + 4) .note {
+  --paper: #ff9bd1;
+}
+
+.note:nth-child(5n + 5),
+.theme-pin-pair:nth-child(5n + 5) .note {
+  --paper: #c8a1ff;
+}
+
+.note h2 {
+  font-family: "Original Surfer", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.note p {
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+}
+
+/* Category notes retain the original sticky-note appearance. */
+.category-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.category-note h2 {
+  font-family: "Original Surfer", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: .7rem 0 .45rem;
+  font-size: 1.5rem;
+}
+
+.category-note p {
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.category-note-action {
+  margin-top: 1rem;
+  padding: .45rem .65rem;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.category-note:hover,
+.category-note:focus-visible {
+  outline: 4px solid var(--a);
+  outline-offset: 4px;
+}
+
+/* Each theme uses one original square sticky note and one near-equal-size Polaroid. */
+.theme-pin-pair {
+  position: absolute;
+  width: 230px;
+  height: 390px;
+  z-index: 3;
+}
+
+.theme-pin-pair .theme-note {
+  top: 155px;
+  left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.theme-note small {
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.theme-note h2 {
+  font-family: "Original Surfer", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: .75rem 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.theme-note-action {
+  padding: .45rem .65rem;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.theme-note:hover,
+.theme-note:focus-visible {
+  outline: 4px solid var(--a);
+  outline-offset: 4px;
+}
+
+.theme-polaroid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  width: 230px;
+  height: 260px;
+  padding: 13px 13px 42px;
+  overflow: hidden;
+  background: #fffdf8;
+  color: #22170f;
+  text-decoration: none;
+  border: 1px solid rgba(70, 45, 28, .22);
+  box-shadow: 0 12px 24px #0008;
+  transform: rotate(calc(var(--r) * -.65));
+}
+
+.theme-polaroid::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  translate: -50% 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff8 0 18%, transparent 19%), radial-gradient(circle, #ff4db8 0 60%, #9d0a71 61%);
+  box-shadow: 0 3px 5px #0008;
+  z-index: 2;
+}
+
+.theme-polaroid-image,
+.theme-polaroid-fallback {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(0, 0, 0, .14);
+}
+
+.theme-polaroid-image {
+  object-fit: cover;
+  object-position: center center;
+  background: transparent;
+}
+
+.theme-polaroid-fallback {
+  place-items: center;
+  padding: .7rem;
+  background: #111111;
+  font-size: .7rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.theme-polaroid-fallback:not([hidden]) {
+  display: grid;
+}
+
+.theme-polaroid-caption {
+  display: block;
+  margin-top: 8px;
+  overflow: hidden;
+  color: #2c2119;
+  font-family: "Ribeye Marrow", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.board-pagination {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 1.25rem auto 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.board-pagination[hidden] {
+  display: none;
+}
+
+.board-pagination span {
+  min-width: 250px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.board-pagination button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* Original 4-across arrangement, expanded vertically for note + Polaroid pairs. */
+.theme-pin-pair:nth-child(1) {
+  left: 55px;
+  top: 35px;
+  --r: -2deg;
+}
+
+.theme-pin-pair:nth-child(2) {
+  left: 339px;
+  top: 40px;
+  --r: 1deg;
+}
+
+.theme-pin-pair:nth-child(3) {
+  left: 623px;
+  top: 35px;
+  --r: -1deg;
+}
+
+.theme-pin-pair:nth-child(4) {
+  left: 907px;
+  top: 45px;
+  --r: 2deg;
+}
+
+.theme-pin-pair:nth-child(5) {
+  left: 55px;
+  top: 455px;
+  --r: 2deg;
+}
+
+.theme-pin-pair:nth-child(6) {
+  left: 339px;
+  top: 460px;
+  --r: -2deg;
+}
+
+.theme-pin-pair:nth-child(7) {
+  left: 623px;
+  top: 450px;
+  --r: 1deg;
+}
+
+.theme-pin-pair:nth-child(8) {
+  left: 907px;
+  top: 465px;
+  --r: -2deg;
+}
+
+.theme-pin-pair:nth-child(9) {
+  left: 55px;
+  top: 875px;
+  --r: -1deg;
+}
+
+.theme-pin-pair:nth-child(10) {
+  left: 339px;
+  top: 880px;
+  --r: 2deg;
+}
+
+.theme-pin-pair:nth-child(11) {
+  left: 623px;
+  top: 870px;
+  --r: -2deg;
+}
+
+.theme-pin-pair:nth-child(12) {
+  left: 907px;
+  top: 885px;
+  --r: 1deg;
+}
+
+.theme-pin-pair:nth-child(13) {
+  left: 55px;
+  top: 1295px;
+  --r: 2deg;
+}
+
+.theme-pin-pair:nth-child(14) {
+  left: 339px;
+  top: 1295px;
+  --r: -1deg;
+}
+
+.theme-pin-pair:nth-child(15) {
+  left: 623px;
+  top: 1290px;
+  --r: 2deg;
+}
+
+.theme-pin-pair:nth-child(16) {
+  left: 907px;
+  top: 1305px;
+  --r: -1deg;
+}
+
+/* Category landing board uses a compact top row with equal left and right spacing. */
+.category-note:nth-child(1) {
+  left: 104px;
+  top: 5%;
+  --r: -2deg;
+}
+
+.category-note:nth-child(2) {
+  left: 359px;
+  top: 5%;
+  --r: 1deg;
+}
+
+.category-note:nth-child(3) {
+  left: 614px;
+  top: 5%;
+  --r: -1deg;
+}
+
+.category-note:nth-child(4) {
+  left: 869px;
+  top: 5%;
+  --r: 2deg;
+}
+
+.category-note:nth-child(5) {
+  left: 104px;
+  top: 24%;
+  --r: 2deg;
+}
+
+.category-note:nth-child(6) {
+  left: 359px;
+  top: 24%;
+  --r: -2deg;
+}
+
+@media (max-width:700px) {
+  .hero {
+    padding-top: 2rem;
+  }
+  
+  .hero h1 {
+    font-family: "Rubik Doodle Shadow", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+  }
+  
+  .category-navigation {
+    gap: .5rem;
+  }
+  
+  .category-navigation button,
+  .board-pagination button {
+    padding: .55rem .7rem;
+    font-size: .78rem;
+  }
+  
+  .board-pagination {
+    flex-wrap: wrap;
+    gap: .7rem;
+  }
+  
+  .board-pagination span {
+    order: -1;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .hero {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+  }
+  
+  .hero p:last-child {
+    font-family: "Englebert", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .board-navigation {
+    width: 100%;
+    padding: 0 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .category-navigation {
+    justify-content: center;
+  }
+  
+  .pinboard-viewport {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* Shared site chrome and unified supporting-page boards. */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #05050d;
+  color: #f6f2ff
+}
+
+body>main {
+  flex: 1
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: .7rem 0;
+  background: rgba(5, 5, 13, .96);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  backdrop-filter: blur(14px)
+}
+
+.site-header__inner {
+  width: min(1240px, calc(100% - 2rem));
+  margin: auto;
+  min-height: 68px;
+  padding: .7rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #fffdf7;
+  color: #1d1421;
+  border: 2px solid #1d1421;
+  box-shadow: 5px 5px 0 #1d1421
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  color: #1d1421;
+  text-decoration: none
+}
+
+.site-brand__mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #ff4db8;
+  color: #ff4db8;
+  box-shadow: inset -4px -5px 0 #a31170, 0 3px 5px #0006
+}
+
+.site-brand strong,
+.site-brand small {
+  display: block
+}
+
+.site-brand strong {
+  font-family: "in Sketch", cursive;
+  font-size: 1.15rem
+}
+
+.site-brand small {
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #6e6172
+}
+
+.site-nav {
+  display: flex;
+  gap: .5rem
+}
+
+.site-nav a {
+  padding: .6rem .8rem;
+  border: 2px solid #1d1421;
+  background: #fff;
+  color: #1d1421;
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 3px 3px 0 #1d1421
+}
+
+.site-nav a:nth-child(2) {
+  background: #e7ff6d
+}
+
+.site-nav a:last-child {
+  background: #7ce7ff
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #1d1421;
+  outline: none
+}
+
+.site-footer {
+  margin-top: auto;
+  padding: 1rem 0 1.5rem;
+  background: #0b0b16;
+  border-top: 1px solid rgba(255, 255, 255, .12)
+}
+
+.site-footer__inner {
+  width: min(1240px, calc(100% - 2rem));
+  margin: auto;
+  padding: 1.6rem 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2rem 2rem;
+  background: #fffdf7;
+  color: #1d1421;
+  border: 2px solid #1d1421;
+  box-shadow: 5px 5px 0 #1d1421
+}
+
+.site-footer p {
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin: .4rem 0 0;
+  color: #6e6172
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .8rem 1rem
+}
+
+.site-footer nav a {
+  color: #1d1421;
+  font-weight: 850;
+  text-decoration: underline;
+  text-decoration-color: #ff4db8;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px
+}
+
+.site-footer__copyright {
+  grid-column: 1/-1;
+  padding-top: 1rem;
+  border-top: 2px dashed #d0c0b5
+}
+
+.detail-heading {
+  padding-top: 3rem
+}
+
+.detail-heading h1 {
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+}
+
+.static-board-viewport {
+  margin-bottom: 3rem
+}
+
+.detail-pinboard,
+.about-pinboard {
+  height: 1780px
+}
+
+.board-back-note {
+  position: absolute;
+  left: 58px;
+  top: 42px;
+  z-index: 5;
+  padding: .72rem 1rem;
+  border: 2px solid #1d1421;
+  border-radius: 999px;
+  background: #7ce7ff;
+  color: #1d1421;
+  text-decoration: none;
+  font-weight: 950;
+  box-shadow: 4px 4px 0 #1d1421
+}
+
+.detail-polaroid-card {
+  position: absolute;
+  left: 82px;
+  top: 145px;
+  z-index: 3;
+  width: 470px;
+  height: 520px;
+  padding: 22px 22px 72px;
+  background: #fffdf8;
+  color: #22170f;
+  border: 1px solid #8d7765;
+  box-shadow: 0 16px 34px #0008;
+  transform: rotate(-1deg)
+}
+
+.detail-polaroid-card::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 21px;
+  height: 21px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: #ff4db8;
+  box-shadow: 0 3px 5px #0008
+}
+
+.detail-polaroid-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  background: transparent;
+  border: 1px solid #0004
+}
+
+.detail-polaroid-card span {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  font-family: "Ribeye Marrow", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  font-style: normal;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-title-note,
+.about-title-note {
+  position: absolute;
+  z-index: 3;
+  padding: 2rem;
+  background: #e7ff6d;
+  color: #1d1421;
+  box-shadow: 0 16px 30px #0008;
+  transform: rotate(1deg)
+}
+
+.detail-title-note {
+  left: 665px;
+  top: 175px;
+  width: 455px;
+  min-height: 430px
+}
+
+.detail-title-note p {
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0 0 .9rem;
+  font-size: 1.25rem;
+  font-weight: 950;
+  text-align: center;
+  justify-content: center;
+}
+
+.about-title-note p {
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0 0 .9rem;
+  font-size: 1.75rem;
+  font-weight: 950;
+  text-align: center;
+  justify-content: center;
+}
+
+.detail-title-note h2 {
+  font-family: "Ribeye Marrow", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin: 0 0 1.2rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+  hyphens: none
+}
+
+.about-title-note h2 {
+  font-family: "Ribeye Marrow", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3rem;
+  margin: 0 0 1.2rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+  hyphens: none
+}
+
+.detail-title-note div {
+  font-size: 1.15rem;
+  line-height: 1.65
+}
+
+.board-paper {
+ position: absolute;
+  z-index: 3;
+  padding: 1.8rem 2rem;
+  background: #fffdf7;
+  color: #1d1421;
+  border: 1px solid #cbb9aa;
+  box-shadow: 0 13px 28px #0007;
+}
+
+.board-paper h2 {
+  font-family: "Original Surfer", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3rem;
+  margin: .15rem 0 .9rem;
+}
+
+.board-paper p {
+  font-family: "Englebert", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1.65;
+}
+
+.paper-kicker {
+  margin: 0 !important;
+  color: #8b286b;
+  font-size: 1rem !important;
+  font-weight: 950;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.board-paper-about {
+  left: 75px;
+  top: 720px;
+  width: 1090px;
+  height: 350px;
+}
+
+.board-paper-about>p:not(.paper-kicker) {
+  max-width: 720px;
+}
+
+.board-paper dl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .8rem;
+  margin: 1rem 0 0;
+}
+
+.board-paper dl div {
+  padding: 1rem;
+  background: #f1e8ff;
+  border-top: 5px solid #ff4db8;
+}
+
+.board-paper dt {
+  font-size: .68rem;
+  font-weight: 950;
+  letter-spacing: .12em;
+  text-transform: uppercase
+}
+
+.board-paper dd {
+  margin: .35rem 0 0;
+  font-weight: 800;
+}
+
+.board-paper-highlights {
+  left: 75px;
+  top: 1110px;
+  width: 1090px;
+  height: 300px;
+}
+
+.board-paper-highlights ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .8rem;
+  padding: 0;
+  list-style: none;
+}
+
+.board-paper-highlights li {
+  padding: 1rem;
+  background: #f1e8ff;
+  border-left: 6px solid #ff4db8;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.board-paper-actions {
+  left: 75px;
+  top: 1450px;
+  width: 1090px;
+  height: 230px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.board-actions {
+  display: flex;
+  gap: .9rem
+}
+
+.board-actions a,
+.paper-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .78rem 1rem;
+  border: 2px solid #1d1421;
+  border-radius: 999px;
+  background: #7ce7ff;
+  color: #1d1421;
+  text-decoration: none;
+  font-weight: 950;
+  box-shadow: 4px 4px 0 #1d1421
+}
+
+.board-actions a:last-child {
+  background: #ff4db8
+}
+
+.about-title-note {
+  left: 690px;
+  top: 145px;
+  width: 430px;
+  min-height: 390px;
+  background: #ff9bd1
+}
+
+.about-paper-one {
+  left: 80px;
+  top: 180px;
+  width: 530px;
+  height: 430px
+}
+
+.about-paper-two {
+  left: 80px;
+  top: 690px;
+  width: 1080px;
+  height: 390px
+}
+
+.about-paper-two li {
+  margin: .85rem 0;
+  font-size: 1.05rem;
+  line-height: 1.5
+}
+
+.about-paper-three {
+  left: 80px;
+  top: 1160px;
+  width: 1080px;
+  height: 440px
+}
+
+.about-paper-three .paper-button {
+  margin-top: 1rem;
+  background: #7ce7ff
+}
+
+@media(max-width:700px) {
+  .site-header {
+    position: relative
+  }
+  
+  .site-header__inner {
+    width: calc(100% - 1rem);
+    align-items: stretch;
+    flex-direction: column
+  }
+  
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+  }
+  
+  .site-nav a {
+    display: grid;
+    place-items: center;
+    padding: .55rem .25rem;
+    font-size: .72rem;
+    text-align: center
+  }
+  
+  .site-footer__inner {
+    width: calc(100% - 1rem);
+    grid-template-columns: 1fr
+  }
+  
+  .site-footer nav {
+    justify-content: flex-start
+  }
+  
+  .site-footer__copyright {
+    grid-column: 1
+  }
+  
+  .detail-heading {
+    text-align: center;
+    padding-top: 2.2rem
+  }
+  
+  .detail-heading p {
+    font-family: "Englebert", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: auto;
+    margin-right: auto
+  }
+}
+
+
+/* FINAL SHARED BOARD SYSTEM
+   Every category, individual theme, and About page uses this exact same board. */
+.pinboard,
+.detail-pinboard,
+.about-pinboard {
+  background-color: #dfaa73 !important;
+  background-image: url("../images/cork-texture-tile.png") !important;
+  background-repeat: repeat !important;
+  background-size: 300px 300px !important;
+  border: 24px solid #b3763b !important;
+  border-right-color: #9e642e !important;
+  border-bottom-color: #824f21 !important;
+  border-left-color: #cca474 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, .75) !important;
+}
+
+.pinboard::before,
+.detail-pinboard::before,
+.about-pinboard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 12px 12px 20px rgba(0, 0, 0, .8), inset -6px -6px 15px rgba(0, 0, 0, .45);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pinboard::after,
+.detail-pinboard::after,
+.about-pinboard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid #4a2d14;
+  opacity: .35;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ThemeBulletin site branding */
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-brand__mark {
+  display: inline-grid;
+  place-items: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 0 auto;
+  color: #d95f76;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.site-brand>span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.site-brand strong {
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.site-brand small {
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+.hero h2 {
+  font-family: "Original Surfer", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.site-footer strong {
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .site-brand strong {
+    font-size: 1.75rem;
+  }
+  
+  .site-brand small {
+    font-size: 1.15rem;
+  }
+  
+  .site-footer strong {
+    font-size: 1.5rem;
+  }
+}
+
+/* Even cork spacing for every supporting-page container. */
+:root {
+  --supporting-board-inset: 51px;
+  --supporting-board-content-width: 1090px;
+}
+
+.detail-polaroid-card,
+.about-paper-one,
+.about-paper-two,
+.about-paper-three,
+.board-paper-about,
+.board-paper-highlights,
+.board-paper-actions {
+  left: var(--supporting-board-inset);
+}
+
+.detail-title-note,
+.about-title-note {
+  left: auto;
+  right: var(--supporting-board-inset);
+}
+
+.board-paper-about,
+.board-paper-highlights,
+.board-paper-actions,
+.about-paper-two,
+.about-paper-three {
+  width: var(--supporting-board-content-width);
+}
+
+.about-paper-one {
+  width: 535px;
+}
+
+/* Multicolored thumbtacks hold every paper element to the cork. */
+.category-note:nth-child(6n + 1),
+.theme-pin-pair:nth-child(6n + 1) {
+  --tack-color: #ff4db8;
+  --tack-shadow: #9d0a71;
+}
+
+.category-note:nth-child(6n + 2),
+.theme-pin-pair:nth-child(6n + 2) {
+  --tack-color: #16dff2;
+  --tack-shadow: #087f8c;
+}
+
+.category-note:nth-child(6n + 3),
+.theme-pin-pair:nth-child(6n + 3) {
+  --tack-color: #a9ef55;
+  --tack-shadow: #579528;
+}
+
+.category-note:nth-child(6n + 4),
+.theme-pin-pair:nth-child(6n + 4) {
+  --tack-color: #ff8a3d;
+  --tack-shadow: #b84312;
+}
+
+.category-note:nth-child(6n + 5),
+.theme-pin-pair:nth-child(6n + 5) {
+  --tack-color: #a97cff;
+  --tack-shadow: #6337b6;
+}
+
+.category-note:nth-child(6n),
+.theme-pin-pair:nth-child(6n) {
+  --tack-color: #ffe45e;
+  --tack-shadow: #c08a11;
+}
+
+.note::before,
+.theme-polaroid::before,
+.detail-polaroid-card::before {
+  background:
+    radial-gradient(circle at 35% 30%, #fff9 0 18%, transparent 19%),
+    radial-gradient(circle, var(--tack-color, #ff4db8) 0 60%, var(--tack-shadow, #9d0a71) 61%);
+}
+
+.detail-polaroid-card {
+  --tack-color: #ff4db8;
+  --tack-shadow: #9d0a71;
+}
+
+.detail-title-note {
+  --tack-color: #16dff2;
+  --tack-shadow: #087f8c;
+}
+
+.board-paper-about {
+  --tack-color: #a9ef55;
+  --tack-shadow: #579528;
+}
+
+.board-paper-highlights {
+  --tack-color: #ff8a3d;
+  --tack-shadow: #b84312;
+}
+
+.board-paper-actions {
+  --tack-color: #a97cff;
+  --tack-shadow: #6337b6;
+}
+
+.about-title-note {
+  --tack-color: #ffe45e;
+  --tack-shadow: #c08a11;
+}
+
+.about-paper-one {
+  --tack-color: #16dff2;
+  --tack-shadow: #087f8c;
+}
+
+.about-paper-two {
+  --tack-color: #ff4db8;
+  --tack-shadow: #9d0a71;
+}
+
+.about-paper-three {
+  --tack-color: #a9ef55;
+  --tack-shadow: #579528;
+}
+
+.detail-title-note::before,
+.about-title-note::before,
+.board-paper::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  z-index: 5;
+  width: 21px;
+  height: 21px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, #fff9 0 18%, transparent 19%),
+    radial-gradient(circle, var(--tack-color) 0 60%, var(--tack-shadow) 61%);
+  box-shadow: 0 3px 5px #0008;
+}
+
+/* ==========================================================================
+   THE THEMEBULLETIN COMPLETE RESPONSIVE TYPOGRAPHY ENGINE OVERRIDES
+   ========================================================================== */
+
+/* --- 1. GLOBAL BASELINE --- */
+body {
+  font-size: clamp(1rem, 0.09vw + 0.97rem, 1.0625rem); /* 16px -> 17px */
+}
+
+/* --- 2. SITE HEADER & NAVIGATION --- */
+.site-brand strong {
+  font-size: clamp(1.25rem, 0.82vw + 1.07rem, 2rem); /* 20px -> 32px */
+}
+
+.site-brand small {
+  font-size: clamp(1rem, 0.14vw + 0.92rem, 1.15rem); /* 16px -> 18.4px */
+}
+
+.site-nav a {
+  font-size: clamp(0.9375rem, 0.11vw + 0.9rem, 1.0125rem); /* 15px -> 16.2px */
+}
+
+.category-navigation button,
+.board-pagination button {
+  font-size: clamp(0.9375rem, 0.11vw + 0.9rem, 1.0125rem); /* 15px -> 16.2px */
+}
+
+/* --- 3. HERO & ABOUT PAGE CONTENT SECTIONS --- */
+.eyebrow,
+.hero .eyebrow {
+  font-size: clamp(0.875rem, 0.11vw + 0.84rem, 1rem); /* 14px -> 16px */
+}
+
+.hero h1,
+.about-page h1 {
+  font-size: clamp(2.25rem, 2.91vw + 1.33rem, 4.25rem); /* 36px -> 68px */
+}
+
+.hero h2 {
+  font-size: clamp(1.5rem, 1.09vw + 1.15rem, 2.25rem); /* 24px -> 36px */
+}
+
+.hero p:last-child,
+.about-page p {
+  font-size: clamp(1.125rem, 0.36vw + 1.01rem, 1.375rem); /* 18px -> 22px */
+}
+
+/* --- 4. SITE FOOTER --- */
+.site-footer strong {
+  font-size: clamp(1.1875rem, 0.36vw + 1.07rem, 1.5rem); /* 19px -> 24px */
+}
+
+.site-footer p {
+  font-size: clamp(0.9375rem, 0.09vw + 0.91rem, 1rem); /* 15px -> 16px */
+}
+
+.site-footer nav a {
+  font-size: clamp(1rem, 0.09vw + 0.97rem, 1.0625rem); /* 16px -> 17px */
+}
+
+/* --- 5. PINBOARD INDIVIDUAL STICKY NOTES (.note & .category-note) --- */
+.note h2,
+.category-note h2 {
+  font-size: clamp(1.25rem, 0.36vw + 1.14rem, 1.5rem); /* 20px -> 24px (Caps size to protect container box limits) */
+  text-transform: uppercase
+}
+
+.note p,
+.category-note p {
+  font-size: clamp(0.9375rem, 0.09vw + 0.91rem, 1.125rem); /* 15px -> 18px */
+}
+
+.category-note-action {
+  font-size: clamp(0.65rem, 0.05vw + 0.63rem, 0.7rem); /* 10.4px -> 11.2px */
+}
+
+/* --- 6. PINBOARD THEME PAIR CONTROLS --- */
+.theme-note small {
+  font-size: clamp(1rem, 0.14vw + 0.92rem, 1.15rem); /* 16px -> 18.4px */
+}
+
+.theme-note h2 {
+  font-size: clamp(1.25rem, 0.36vw + 1.14rem, 1.5rem); /* 20px -> 24px */
+}
+
+.theme-note-action {
+  font-size: clamp(0.65rem, 0.05vw + 0.63rem, 0.7rem); /* 10.4px -> 11.2px */
+}
+
+/* --- 7. PINBOARD THEME POLAROID CARDS --- */
+.theme-polaroid-fallback {
+  font-size: clamp(0.65rem, 0.05vw + 0.63rem, 0.7rem); /* 10.4px -> 11.2px */
+}
+
+.theme-polaroid-caption {
+  font-size: clamp(1.25rem, 0.36vw + 1.14rem, 1.5rem); /* 20px -> 24px */
+}
+
+/* --- 8. DETAIL HEADING & GENERAL ACTION COMPONENT LINKS --- */
+.detail-heading h1 {
+  font-size: clamp(2.25rem, 2.91vw + 1.33rem, 4.25rem); /* Balanced 36px -> 68px */
+}
+
+.board-back-note,
+.board-actions a,
+.paper-button {
+  font-size: clamp(0.9375rem, 0.11vw + 0.9rem, 1.0125rem); /* 15px -> 16.2px */
+}
+
+/* --- 9. DETAIL VIEW LARGE POLAROID OVERLAY CARDS --- */
+.detail-polaroid-card span {
+  font-size: clamp(1.5rem, 1.09vw + 1.15rem, 2.25rem); /* 24px -> 36px */
+}
+
+/* --- 10. DETAIL & ABOUT PAGE PINBOARD HEADER STICKY NOTES --- */
+.detail-title-note p,
+.about-title-note p {
+  font-size: clamp(1.125rem, 0.36vw + 1.01rem, 1.375rem); /* 18px -> 22px */
+  text-transform: uppercase;
+}
+
+.detail-title-note h2 {
+  font-size: clamp(1.25rem, 0.36vw + 1.14rem, 1.5rem); /* 20px -> 24px */
+}
+
+.about-title-note h2 {
+  font-size: clamp(1.75rem, 1.09vw + 1.51rem, 2.5rem); /* 28px -> 40px */
+}
+
+.detail-title-note div {
+  font-size: clamp(0.9375rem, 0.11vw + 0.91rem, 1.0125rem); /* 15px -> 16.2px */
+}
+
+/* --- 11. LARGE BOARD-PAPER DOCUMENTS --- */
+.board-paper h2 {
+  font-size: clamp(1.75rem, 1.09vw + 1.51rem, 2.5rem); /* 28px -> 40px */
+}
+
+.board-paper p {
+  font-size: clamp(1.125rem, 0.36vw + 1.01rem, 1.375rem); /* 18px -> 22px */
+}
+
+.paper-kicker {
+  font-size: clamp(0.875rem, 0.11vw + 0.84rem, 1rem) !important; /* 14px -> 16px */
+}
+
+.board-paper dt {
+  font-size: clamp(0.65rem, 0.05vw + 0.63rem, 0.7rem); /* 10.4px -> 11.2px */
+}
+
+.board-paper dd {
+  font-size: clamp(1rem, 0.14vw + 0.92rem, 1.15rem); /* 16px -> 18.4px */
+}
+
+.board-paper-highlights li {
+  font-size: clamp(1rem, 0.14vw + 0.92rem, 1.15rem); /* 16px -> 18.4px */
+}
+
+.about-paper-two li {
+  font-size: clamp(0.95rem, 0.09vw + 0.93rem, 1.0125rem); /* 15.2px -> 16.2px */
+}
+
+/* --- 12. FIXED MOBILE MEDIA QUERY REDUCTIONS --- */
+@media (max-width: 700px) {
+  .site-brand strong {
+    font-size: clamp(1.15rem, 1.36vw + 0.81rem, 1.45rem); /* Scales down gracefully on mobile chrome rows */
+  }
+  
+  .site-brand small {
+    font-size: clamp(0.9rem, 0.57vw + 0.76rem, 1.025rem);
+  }
+  
+  .site-footer strong {
+    font-size: clamp(1.125rem, 0.8vw + 0.92rem, 1.3rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 2.84vw + 1.04rem, 2.375rem);
+  }
+
+  .site-nav a {
+    font-size: clamp(0.65rem, 0.16vw + 0.61rem, 0.72rem);
+  }
+  
+  .category-navigation button,
+  .board-pagination button {
+    font-size: clamp(0.72rem, 0.14vw + 0.68rem, 0.78rem);
+  }
+}

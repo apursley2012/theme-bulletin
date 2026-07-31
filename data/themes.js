@@ -119,16 +119,7 @@ window.STICKY_NOTE_THEMES = [
     "detail": "./pages/themes/a-master-artificer.html",
     "summary": "A workshop-inspired portfolio with handcrafted typography, instrument-like details, and an inventor’s-desk sense of precision."
   },
-  {
-    "id": "top-secret",
-    "name": "Top Secret",
-    "category": "Developer & Systems",
-    "demo": "https://apursley2012.github.io/top-secret/",
-    "repo": "https://github.com/apursley2012/top-secret",
-    "preview_file": "top-secret.jpg",
-    "detail": "./pages/themes/top-secret.html",
-    "summary": "A classified intelligence-file portfolio with redacted details, case-file panels, and a controlled investigative presentation."
-  },
+
   {
     "id": "webmaster",
     "name": "Webmaster",

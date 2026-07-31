@@ -1,0 +1,135 @@
+---
+title: "How to Customize a ThemeBulletin Theme After Forking"
+sidebarTitle: "Customizing a Theme"
+description: "Learn how to personalize a ThemeBulletin theme: update HTML content, override CSS custom properties, swap Google Fonts, and replace preview images."
+---
+
+Once you have forked a ThemeBulletin theme and deployed it to GitHub Pages, the real work begins: making it yours. Every theme is built from plain HTML and CSS with no framework abstractions in the way, so customization is direct and immediate. You edit files in the repository, commit your changes, and GitHub Pages re-deploys automatically. This page walks through the most common customizations in order of how often you will need them.
+
+<Tip>
+  Before editing any files, open your deployed theme in a browser and use DevTools (press `F12` or `Cmd+Option+I`) to experiment with color and layout changes in real time. Identify the exact property names and values you want to change before touching source files.
+</Tip>
+
+## Editing HTML Content
+
+Each theme is a single `index.html` file. Open it in your editor and locate the sections that contain your name, bio, project listings, and contact information. These are always plain HTML text nodes — no templating language or CMS involved.
+
+Common things to update:
+
+- **Your name** — usually in an `<h1>` or prominent heading near the top of `<main>`
+- **Your title or bio** — typically in a `<p>` tag immediately below the name
+- **Project links** — `<a>` tags with `href` pointing to live projects or GitHub repositories
+- **Skills or tech stack** — list items in `<ul>` or structured sections within the layout
+- **Social / contact links** — `<a>` tags in the footer or navigation area
+
+```html
+<!-- Before -->
+<h1>Your Name Here</h1>
+<p>Full-stack developer building things for the web.</p>
+
+<!-- After -->
+<h1>Alysha Pursley</h1>
+<p>Front-end developer and theme designer obsessed with character-driven portfolios.</p>
+```
+
+<Warning>
+  Avoid altering structural class names (`class="..."` attributes) unless you also update the corresponding CSS selectors. Theme layouts depend on these class names to apply positioning, color, and typography.
+</Warning>
+
+## Changing Colors with CSS Custom Properties
+
+Every ThemeBulletin theme defines its color palette as CSS custom properties on the `:root` element. The gallery's own interface uses four core variables:
+
+```css
+:root {
+  --bg: #05050d;   /* Page background */
+  --a:  #00e5ff;   /* Primary accent (cyan) */
+  --b:  #ff4db8;   /* Secondary accent (pink) */
+  --fg: #f6f2ff;   /* Foreground / text color */
+}
+```
+
+Individual themes follow the same pattern but may use different variable names and more variables to capture their specific palette. To re-theme a design, override these variables in a `<style>` block in the `<head>` of `index.html`, or edit the values directly in the linked CSS file.
+
+**Example: switching a dark cyan-and-pink theme to a green-and-amber palette**
+
+```css
+:root {
+  --bg: #060d05;   /* Very dark green-black background */
+  --a:  #39ff14;   /* Neon green primary accent */
+  --b:  #ffaa00;   /* Amber secondary accent */
+  --fg: #f5ffe8;   /* Warm off-white foreground */
+}
+```
+
+Because all color references in the theme CSS use `var(--a)`, `var(--b)`, and so on, changing these four values cascades through the entire design instantly.
+
+<Tip>
+  Use the browser DevTools **Styles** panel to edit `--a` and `--b` on the `:root` element and see your color changes live before committing them to your CSS file.
+</Tip>
+
+## Swapping Google Fonts
+
+Every theme loads one or more Google Fonts via a `<link>` tag in the `<head>`. To swap to a different typeface:
+
+1. Visit [fonts.google.com](https://fonts.google.com) and find a font you want to use.
+2. Click **Get font** → **Get embed code** and copy the `<link>` tag Google provides.
+3. In `index.html`, replace the existing `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?...">` tag with your new one.
+4. Update the `font-family` declarations in the CSS file to reference your new font name.
+
+```html
+<!-- Original font import -->
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Replacement: swap to Space Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+```
+
+```css
+/* Update the font-family in the CSS */
+body {
+  font-family: 'Space Mono', monospace;
+}
+```
+
+## Replacing Preview Images
+
+Many themes include a featured image or background asset (typically a `.jpg` or `.png` in an `assets/images/` directory). To swap in your own image:
+
+1. Add your replacement image file to the same directory as the original (`assets/images/` or wherever the existing image lives).
+2. Update the `src` attribute on the `<img>` element, or update the `background-image` URL in the CSS, to point to your new filename.
+
+```html
+<!-- Original -->
+<img src="assets/images/preview.jpg" alt="Portfolio preview">
+
+<!-- Updated with your own image -->
+<img src="assets/images/my-photo.jpg" alt="Your name — developer portfolio">
+```
+
+## Editing the About Section
+
+Most themes include a dedicated about or bio section. Locate it in the HTML by searching for `about`, `bio`, or the descriptive text you saw in the live demo. Update the copy to reflect your own background, skills, and experience. Keep the surrounding HTML structure intact — change only the text content inside the tags.
+
+## Editing the `<meta>` Description and `<title>`
+
+Always update the page `<title>` and `<meta name="description">` in the `<head>` to reflect your own name and portfolio description. These are what appear in browser tabs and search engine results.
+
+```html
+<head>
+  <!-- Update these two lines -->
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Your Name is a full-stack developer specializing in TypeScript and React, based in Austin, TX.">
+</head>
+```
+
+## What to Do Next
+
+<CardGroup cols={2}>
+  <Card title="Fork and Adapt" icon="code-branch" href="/using-themes/fork-and-adapt">
+    Go deeper — add new HTML sections, set up a custom domain CNAME, and run the theme locally with servor.
+  </Card>
+  <Card title="Deploy to GitHub Pages" icon="rocket" href="/using-themes/deploying-to-github-pages">
+    Review the deployment steps if you have not yet published your portfolio.
+  </Card>
+</CardGroup>

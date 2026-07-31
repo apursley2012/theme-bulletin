@@ -1,0 +1,89 @@
+---
+title: "How the ThemeBulletin Bulletin Board Interface Works"
+sidebarTitle: "How It Works"
+description: "Understand ThemeBulletin's bulletin board interface, paginated theme boards, polaroid cards, sticky notes, and the STICKY_NOTE_THEMES data structure."
+---
+
+ThemeBulletin presents its theme collection through a bulletin board metaphor: a corkboard-style canvas onto which polaroid photo cards and sticky notes are pinned. When you first land on the gallery, you see the **category overview board** — four large sticky notes, one per category, each showing the category name and how many themes it contains. Clicking any category note transitions the board to show that category's individual themes, paginated in groups of 16.
+
+## The Category Overview Board
+
+The opening view renders one sticky note per category directly onto the pinboard canvas. Each note displays the category label, a theme count, and an "Open Category →" prompt. Clicking a note (or pressing `Enter` / `Space` when it has keyboard focus) replaces the overview board with that category's theme grid.
+
+The four categories and their theme counts are:
+
+| Category | Themes |
+|---|---|
+| Developer & Systems | 13 |
+| Retro & Gaming | 22 |
+| Space & Creative | 11 |
+| Spooky & Magical | 19 |
+
+## Theme Boards and Pagination
+
+Once inside a category, themes are displayed `THEMES_PER_BOARD = 16` at a time. Each board is a fixed-dimension canvas (`1240 × 1780 px`) that scales down automatically to fit narrower viewports using a CSS `transform: scale()` applied by the `fitBoard` function. The board status indicator below the canvas reads, for example, `Retro & Gaming • Board 1 of 2`, and **Previous Board** / **Next Board** buttons let you move between pages. The pagination controls are hidden entirely when a category has 16 or fewer themes and fits on a single board.
+
+<Note>
+  The `THEMES_PER_BOARD` constant is defined at the top of `assets/js/01-sticky-note-bulletin-board.js`. The Retro & Gaming category (22 themes) is the only category that currently spans two boards.
+</Note>
+
+## Polaroid + Sticky Note Pairs
+
+Each theme on a category board is represented by a **theme-pin pair**: a polaroid photo card paired with a sticky note.
+
+- **Polaroid card** — displays a screenshot thumbnail of the theme's homepage with the theme name as a caption below the image, styled like a physical photo with a white border and drop shadow.
+- **Sticky note** — displays the category label as a small eyebrow, the theme name as a heading, and a "View Theme Details →" prompt.
+
+Both the polaroid and the sticky note are links that navigate to the theme's individual detail page at `pages/themes/<theme-id>.html`.
+
+## Theme Detail Pages
+
+Each theme has a dedicated detail page that presents five sections pinned to its own static board:
+
+1. **Polaroid preview** — a full-size screenshot of the theme's homepage.
+2. **Title note** — category label, theme name, and one-sentence summary.
+3. **At a glance** — a definition list confirming the category, format (standalone static website), and hosting platform (GitHub Pages).
+4. **Design highlights** — a bullet list of the theme's key design and structural properties.
+5. **Explore the theme** — direct links to the **live demo** and the **GitHub repository**.
+
+## The Category Navigation Bar
+
+A sticky category navigation bar sits above the pinboard at all times. It contains an **All Categories** button that returns you to the overview board, plus one button per category. Each button displays the category name and its theme count (e.g. `Retro & Gaming (22)`). The active selection is communicated via the `aria-pressed` attribute.
+
+## The `window.STICKY_NOTE_THEMES` Data Structure
+
+All theme metadata is loaded from `data/themes.js`, which assigns an array of theme objects to `window.STICKY_NOTE_THEMES`. The gallery JavaScript reads this global at startup to build every board, navigation button, and detail-page link dynamically.
+
+Each theme object follows this shape:
+
+```js
+{
+  id: "developer-dossier",
+  name: "Developer Dossier",
+  category: "Developer & Systems",
+  demo: "https://apursley2012.github.io/developer-dossier/",
+  repo: "https://github.com/apursley2012/developer-dossier",
+  preview_file: "developer-dossier.jpg",
+  detail: "./pages/themes/developer-dossier.html",
+  summary: "A classified-file portfolio that presents projects, experience, and technical strengths as a polished professional dossier."
+}
+```
+
+| Field | Description |
+|---|---|
+| `id` | URL-safe slug used to construct the detail page path (`pages/themes/<id>.html`) and the preview image path. |
+| `name` | Display name shown on sticky notes, polaroid captions, and detail page headings. |
+| `category` | One of the four category strings used to group and filter themes on the board. |
+| `demo` | Absolute URL to the theme's live GitHub Pages deployment. |
+| `repo` | Absolute URL to the theme's GitHub repository. |
+| `preview_file` | Filename (including extension) of the screenshot in `assets/images/theme-previews/`. |
+| `detail` | Relative path to the theme's individual HTML detail page. |
+| `summary` | One-sentence description rendered on the detail page's title note and at-a-glance section. |
+
+## How the Board Scales for Mobile
+
+The pinboard canvas has a fixed design width of `1240 px`. On smaller screens, the `fitBoard` function calculates a `scale` factor equal to `Math.min(1, availableWidth / 1240)` and applies it as a CSS transform. The viewport container's height is updated simultaneously so the layout does not overflow. This means the full board design is always visible, just proportionally smaller on narrow screens.
+
+<Tip>
+  If you want to inspect the full board at full size on a small screen, you can use browser DevTools to temporarily override the `transform` on the `.pinboard` element.
+</Tip>
